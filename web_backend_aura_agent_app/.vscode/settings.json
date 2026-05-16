@@ -1,0 +1,16 @@
+{
+    "python.defaultInterpreterPath": "${workspaceFolder}/.venv/Scripts/python.exe",
+    "python.analysis.extraPaths": [
+        "${workspaceFolder}/.venv/Lib/site-packages"
+    ],
+    "search.useIgnoreFiles": true,
+    "search.exclude": {
+        "**/.venv": true,
+        "**/node_modules": true,
+        "**/__pycache__": true,
+        "**/.git": true,
+        "**/dist": true,
+        "**/build": true,
+        "**/web_aura_agent_app": true,
+    }
+}

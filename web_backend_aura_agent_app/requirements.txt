@@ -1,0 +1,14 @@
+fastapi
+uvicorn[standard]
+python-multipart
+firebase-admin
+google-cloud-storage
+google-cloud-bigquery
+google-cloud-aiplatform
+google-auth
+vertexai
+pillow
+midtransclient
+pydantic
+pydantic-settings
+python-dotenv

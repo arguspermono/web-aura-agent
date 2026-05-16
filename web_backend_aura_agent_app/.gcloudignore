@@ -1,0 +1,11 @@
+__pycache__
+*.pyc
+/skills/
+venv
+.*
+!.env
+!.env.*
+!.firebaserc
+!.gcloudignore
+!.gitignore
+

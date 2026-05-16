@@ -1,0 +1,24 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Claims collection — authenticated users can read/write their own claims
+    match /claims/{claimId} {
+      allow read: if request.auth != null && resource.data.user_id == request.auth.uid;
+      allow write: if request.auth != null;
+      // Backend service account can always read/write
+      allow read, write: if request.auth.token.firebase.sign_in_provider == 'service_account';
+    }
+
+    // Files metadata — stored at upload time
+    match /files/{fileId} {
+      allow read: if request.auth != null;
+      allow write: if request.auth != null;
+    }
+
+    // Users — for FCM token storage
+    match /users/{userId} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+    }
+  }
+}
